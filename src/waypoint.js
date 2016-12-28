@@ -3,6 +3,7 @@
 
   var keyCounter = 0
   var allWaypoints = {}
+  var isInitialized = false
 
   /* http://imakewebthings.com/waypoints/api/waypoint */
   function Waypoint(options) {
@@ -125,6 +126,17 @@
   /* Public */
   /* http://imakewebthings.com/waypoints/api/refresh-all */
   Waypoint.refreshAll = function() {
+    Waypoint.Context.refreshAll()
+  }
+
+  /* Public */
+  Waypoint.isInitialized = function() {
+    return isInitialized
+  }
+
+  /* Public */
+  Waypoint.run = function() {
+    isInitialized = true
     Waypoint.Context.refreshAll()
   }
 

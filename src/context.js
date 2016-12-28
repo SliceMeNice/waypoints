@@ -43,7 +43,10 @@
   Context.prototype.add = function(waypoint) {
     var axis = waypoint.options.horizontal ? 'horizontal' : 'vertical'
     this.waypoints[axis][waypoint.key] = waypoint
-    this.refresh()
+
+    if ( Waypoint.isInitialized ) {
+      this.refresh()
+    }
   }
 
   /* Private */
