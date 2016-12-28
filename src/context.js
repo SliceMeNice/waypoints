@@ -44,7 +44,7 @@
     var axis = waypoint.options.horizontal ? 'horizontal' : 'vertical'
     this.waypoints[axis][waypoint.key] = waypoint
 
-    if ( Waypoint.isInitialized ) {
+    if ( Waypoint.isInitialized() ) {
       this.refresh()
     }
   }
